@@ -1,0 +1,167 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Rich ambient background tint */
+    background: linear-gradient(180deg, #eafaf0 0%, #fdf0f0 100%);
+    color: #1a1a1a;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    /* Direct gradient blend from Dark Red to Pale Green */
+    background: linear-gradient(135deg, #8B0000 0%, #98FB98 100%);
+    padding: 1em;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.25);
+}
+
+.text {
+    font-size: 50px;
+}
+
+/* --- ORIGINAL SECTION --- */
+.section {
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 20px;
+    
+    /* Cool gradient: Pale Green top-left -> Dark Red bottom-right */
+    background: linear-gradient(135deg, rgba(152, 251, 152, 0.35) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(139, 0, 0, 0.12) 100%);
+    
+    /* Glassmorphism effect */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    
+    /* Dark Red rim shadow */
+    border: 1px solid rgba(139, 0, 0, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(139, 0, 0, 0.1), 
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
+                
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* --- REVERSED SECTION --- */
+.section.reversed {
+    /* Flipped angle: Dark Red top-left -> Pale Green bottom-right */
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.12) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(152, 251, 152, 0.35) 100%);
+    
+    /* Pale Green rim shadow */
+    border: 1px solid rgba(152, 251, 152, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(152, 251, 152, 0.25), 
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Cards inside the Reversed Section */
+.section.reversed .category,
+.section.reversed .model,
+.section.reversed .memory,
+.section.reversed .color,
+.section.reversed .info {
+    border-color: rgba(152, 251, 152, 0.8);
+    background-color: rgba(242, 251, 244, 0.85);
+}
+
+.selections {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.category,
+.model,
+.memory,
+.color,
+.info {
+    padding: 10px;
+    border: 1.5px solid rgba(139, 0, 0, 0.3);
+    border-radius: 16px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* Merged form controls */
+input, textarea, select, button {
+    display: block;
+    margin: 1em auto;
+    padding: 0.5em;
+    width: 80%;
+    max-width: 400px;
+    border: 1.5px solid #8B0000;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-size: 1em;
+}
+
+select {
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus highlighting using Pale Green glow */
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #8B0000;
+    box-shadow: 0 0 0 3px rgba(152, 251, 152, 0.6);
+}
+
+.order-button {
+    display: block;
+    margin: 2em auto;
+    padding: 0.75em 2em;
+    background: linear-gradient(90deg, #98FB98 0%, #8B0000 100%);
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(139, 0, 0, 0.3);
+}
+
+.order-button:hover {
+    background: linear-gradient(90deg, #8B0000 0%, #98FB98 100%);
+    color: #1a1a1a;
+    box-shadow: 0 6px 14px rgba(152, 251, 152, 0.5);
+}
+
+#order-form {
+    background: linear-gradient(180deg, rgba(152, 251, 152, 0.3) 0%, rgba(139, 0, 0, 0.08) 100%);
+    padding: 2em;
+    text-align: center;
+    border-radius: 12px;
+    border: 1.5px solid #8B0000;
+}
+
+button[type="submit"] {
+    background: #8B0000;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background: #98FB98;
+    color: #1a1a1a;
+    box-shadow: 0 4px 12px rgba(152, 251, 152, 0.6);
+}

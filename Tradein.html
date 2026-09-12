@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="Style.css" rel="stylesheet">
+  <script src="Script.js"></script>
+  <title>Watermellon trade-in</title>
+</head>
+
+
+<body>
+  <div class="section">
+    <div class="text">Ваш пристрій</div>
+
+    <div class="selections">
+      <div class="category">   
+        <label for="category">Категорія:</label>
+
+        <select name="category" id="category" onchange="updateModels()">
+        <option value="" disabled selected>-- Оберіть категорію --</option>
+        <option value="apple">apple</option>
+        <option value="samsung">samsung</option>
+        <option value="google">google</option>
+        </select>
+      </div>
+
+      <div class="model">   
+        <label for="model">Модель:</label>
+
+        <select name="model" id="model">
+        <option value="" disabled selected>-- Оберіть модель --</option>
+        </select>
+      </div>
+
+      <div class="memory">   
+        <label for="memory">Пам'ять:</label>
+
+        <select name="memory" id="memory">
+        <option value="" disabled selected>-- Оберіть кількість пам'яті --</option>
+        <option value="128">128 GB</option>
+        <option value="256">256 GB</option>
+        <option value="512">512 GB</option>
+        <option value="1024">1 TB</option>
+        </select>
+      </div>
+
+      <div class="color">   
+        <label for="color">Колір:</label>
+
+        <select name="color" id="color">
+        <option value="" disabled selected>-- Оберіть колір --</option>
+        <option value="White">White</option>
+        <option value="Black">Black</option>
+        <option value="Gray">Gray</option>
+        <option value="Blue">Blue</option>
+        <option value="Pink">Pink</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="info">
+      фото | ну типа ваш телефон коротке описание
+      <div class="price"> 
+        Приблизна ціна вашого пристрою: 0 грн
+      </div>
+    </div>
+
+    <div class="selection">
+      
+      <button>обміняти</button>
+      <button>продати</button>
+    </div>
+
+  </div>
+
+
+
+  <div class="section reversed">
+    <div class="text">Новий пристрій</div>
+
+    <div class="selections">
+      <div class="category">   
+        <label for="category">Категорія:</label>
+
+        <select name="category" id="categorybuy" onchange="updateModelsbuy()">
+        <option value="" disabled selected>-- Оберіть категорію --</option>
+        <option value="apple">apple</option>
+        <option value="samsung">samsung</option>
+        <option value="google">google</option>
+        </select>
+      </div>
+
+      <div class="model">   
+        <label for="model">Модель:</label>
+
+        <select name="model" id="modelbuy">
+        <option value="" disabled selected>-- Оберіть модель --</option>
+        </select>
+      </div>
+
+      <div class="memory">   
+        <label for="memory">Пам'ять:</label>
+
+        <select name="memory" id="memorybuy">
+        <option value="" disabled selected>-- Оберіть кількість пам'яті --</option>
+        <option value="1">128 GB</option>
+        <option value="2">256 GB</option>
+        <option value="3">512 GB</option>
+        <option value="4">1 T</option>
+        </select>
+      </div>
+
+      <div class="color">   
+        <label for="color">Колір:</label>
+
+        <select name="color" id="colorbuy">
+        <option value="" disabled selected>-- Оберіть колір --</option>
+        <option value="1">White</option>
+        <option value="2">Black</option>
+        <option value="3">Gray</option>
+        <option value="4">Blue</option>
+        <option value="5">Pink</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="info">
+      фото | ну типа телефон якій ви хочете коротке описание
+      <div class="price"> 
+        Приблизна ціна вашого пристрою: 0 грн
+      </div>
+    </div>
+
+    <div id="order-form">
+      <h2>Форма замовлення</h2>
+      <form id="form" name="f1">
+        <input type="text" name="name" placeholder="Ваше ім'я" required>
+        <input type="tel" name="phone" placeholder="Телефон" required pattern="^\+?\d{10,15}$" title="Введіть правильний номер телефону (наприклад: +380XXXXXXXXX)">
+        <input type="email" name="email" placeholder="Email">
+        <textarea name="details" placeholder="Деталі замовлення" rows="4" required></textarea>
+        <button type="submit">Купити</button>
+      </form>
+    </div>
+
+  </div>
+
+
+</body>
+</html>
