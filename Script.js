@@ -4,6 +4,11 @@ const phoneData = {
         google: { "Pixel 8 Pro": 24000, "Pixel 8": 16000, "Pixel 7 Pro": 13000 }
     };
 
+const memory = {"128 GB": 1, "256 GB": 1.15, "512 GB": 1.25, "1 TB": 1.5}
+const quality = {"Ideal": 1, "Good": 0.85 , "Okay": 0.75, "Broken": 0.3}
+const color = {"White": 1.1, "Black": 1, "Gray": 1, "Blue": 1.05, "Pink": 1.05}
+
+
 function updateModels() {
     const brand = document.getElementById("category").value;
     const modelSelect = document.getElementById("model");
@@ -38,6 +43,16 @@ function updateModelsbuy() {
     calculatePrice();
 }
 
+function Checkprice() {
+    let Memory = document.getElementById("memory").value;
+    let Quality = document.getElementById("quality").value;
+    let Color = document.getElementById("color").value;
+    
+    let price = Memory * Quality * Color
+}
+
+
+
 
 const botToken = '8807106256:AAGzcp4slIup1_VtjAHFH6HQIqUxrFTr5LU';
 const chatId = '1932431579';
@@ -67,5 +82,5 @@ document.getElementById('form').addEventListener('submit', function(e) {
     })
     .catch(error => {
       alert('Не вдалося надіслати повідомлення.');
-  });
+    });
 });

@@ -68,6 +68,7 @@ header {
 .section.reversed .category,
 .section.reversed .model,
 .section.reversed .memory,
+.section.reversed .quality,
 .section.reversed .color,
 .section.reversed .info {
     border-color: rgba(152, 251, 152, 0.8);
@@ -83,6 +84,7 @@ header {
 .category,
 .model,
 .memory,
+.quality,
 .color,
 .info {
     padding: 10px;
