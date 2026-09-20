@@ -23,7 +23,6 @@ function updateModels() {
             modelSelect.appendChild(opt);
         });
     }
-    calculatePrice();
 }
 
 function updateModelsbuy() {
@@ -40,15 +39,37 @@ function updateModelsbuy() {
             modelSelect.appendChild(opt);
         });
     }
-    calculatePrice();
 }
 
 function Checkprice() {
     let Memory = document.getElementById("memory").value;
     let Quality = document.getElementById("quality").value;
     let Color = document.getElementById("color").value;
+    let Memorymultip = 0
+    let Qualitymultip = 0
+    let Colormultip = 0
+
+    for (i in memory) {
+        if (i == Memory){
+            Memorymultip = i
+        }
+    }
+
+    for (i in quality) {
+        if (i == Quality){
+            Qualitymultip = i
+        }
+    }
+
+    for (i in color) {
+        if (i == Color){
+             Colormultip = i
+        }
+    }
     
-    let price = Memory * Quality * Color
+    let price = Memorymultip * Qualitymultip * Colormultip
+
+    print(price)
 }
 
 
